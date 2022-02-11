@@ -1,14 +1,11 @@
 * {
   margin: 0;
   paddin: 0;
-}
-
-body, html {
-  overflow-x: hidden;
+  position: relative;
 }
 
 header, footer {
-  background-color: #c5c5c5;
+  background-color: #F2E422;
   padding: 1em 2.5em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -21,8 +18,13 @@ header, footer {
           align-items: center;
 }
 
+header {
+  height: 3em;
+  z-index: 100;
+}
+
 main {
-  background-color: #FFF;
+  background-color: #F32827;
 }
 
 ul {
@@ -43,6 +45,25 @@ a:hover {
   cursor: pointer;
 }
 
+.button {
+  padding: 0.5em 0.25em;
+  border: 1px solid white;
+  border-radius: 0.25em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  background-color: rgba(150, 150, 150, 0);
+  -webkit-transition: background-color 0.5;
+  transition: background-color 0.5;
+}
+
+.button:hover {
+  background-color: rgba(150, 150, 150, 0.5);
+}
+
 .header-links {
   visibility: hidden;
   position: absolute;
@@ -54,7 +75,7 @@ a:hover {
   top: 0;
   -webkit-transition: right 0.5s;
   transition: right 0.5s;
-  background: #c5c5c5;
+  background: #F2E422;
   border-left: 1px solid #000;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -75,6 +96,31 @@ a:hover {
 
 .sidebar.active {
   right: 0;
+}
+
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.home-container .button {
+  position: absolute;
+  bottom: 5vh;
+  right: 45vw;
+  z-index: 50;
+}
+
+#canvas {
+  position: absolute;
+  bottom: -250px;
+  left: 0;
+}
+
+.works {
+  padding: 2.5em 3em;
 }
 
 @media (min-width: 900px) {

@@ -11,56 +11,72 @@
 
     <!-----------------  HEADER  -------------------------->
     <header>
-      <!-- Logo -->
-      <div class="logo-container">
-        <h1>
-          <a href="/index.html">
+        <!-- Logo -->
+        <div class="logo-container">
+          <h1>
+            <a href="/index.html">
             Build-a-Burger <!-- TODO: Picture -->
           </a>
         </h1>
       </div>
-
-      <!-- Links for bigger screens -->
-      <div class="header-links">
-        <a href="/">Home</a> •
-        <a href="/">Order</a> •
-        <a href="/">About & Where to find</a>
-      </div>
-
-      <!-- Sidebar for smaller screens-->
-      <div class="sidebar-container">
-        <div onclick="toggleSidebar()" class="clickable">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="35px" width="35px"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"/></svg>
+      
+        <!-- Links for bigger screens -->
+        <div class="header-links">
+          <a href="/">Home</a> •
+          <a href="/">Order</a> •
+          <a href="/">About & Where to find</a>
         </div>
-        <ul class="sidebar" id="sidebar">
-          <li><a href="/">Home</a></li>
-          <li><a href="/">Order</a></li>
-          <li><a href="/">About & Where to find</a></li>
-          <li onclick="toggleSidebar()" class="clickable">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="35px" width="35px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-          </li>
-        </ul>
-      </div>
+
+        <!-- Sidebar for smaller screens-->
+        <div class="sidebar-container">
+          <div onclick="toggleSidebar()" class="clickable">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="35px" width="35px"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 15h18v-2H3v2zm0 4h18v-2H3v2zm0-8h18V9H3v2zm0-6v2h18V5H3z"/></svg>
+          </div>
+          <ul class="sidebar" id="sidebar">
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Order</a></li>
+            <li><a href="/">About & Where to find</a></li>
+            <li onclick="toggleSidebar()" class="clickable">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="35px" width="35px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+            </li>
+          </ul>
+        </div>
     </header>
 
     <!-----------------  MAIN  -------------------------->
     <main>
       <!-- Home with 3d model with threejs -->
       <div class="home-container">
-        <img src="assets/images/untitled.png" alt="placeholder-image" width="500px">
-        <!-- <canvas id="bg">
+        
+        <canvas id="canvas" class="clickable">
+          <!-- Three js-->
+        </canvas>
 
-        </canvas> -->
-        <div>
-          <h2 class="button"> Order now! </h2>
-        </div>
+        
+        <a href="/" class="button"> Order now! </a>
+        
+
       </div>
 
       <!-- How it works section -->
-      <div>
+      <div class="works"> 
         <h2 class="title">
           How it works
         </h2>
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dolores ab possimus placeat dicta quaerat, distinctio saepe eum magnam necessitatibus aliquam accusamus veritatis! Laborum nobis nostrum provident sapiente blanditiis aspernatur!
+          Qui tempora vero, quos eius assumenda hic fuga optio velit illo nostrum et cumque minima! Recusandae, sed sequi accusamus commodi hic repellendus reiciendis nam repellat quam magni voluptas ipsum incidunt.
+          Dolores pariatur iure laboriosam soluta odit nobis impedit deserunt error quos vero, adipisci at ad perferendis ex quasi facere corrupti suscipit omnis eveniet! Iusto veritatis sit ut, ipsa in impedit?
+          Error illo maiores excepturi optio aliquam delectus debitis voluptates nulla voluptatibus impedit animi vitae quia ad maxime consequuntur, necessitatibus quae minima omnis enim molestiae architecto ullam! Adipisci blanditiis explicabo quo.
+          Quo exercitationem labore iste qui provident odit, ratione voluptate, vero nemo, illum ea. Neque illum tempore vitae! Accusantium numquam natus veniam hic, vel necessitatibus blanditiis maiores impedit, quas, in omnis.
+          Dicta veritatis cumque enim impedit, inventore nobis quia consequuntur dolores unde modi officia possimus, natus obcaecati cupiditate nostrum eveniet magnam? Enim modi alias nisi deleniti a in, voluptatem quasi rerum?
+          Quos similique est possimus cumque culpa neque ipsam error ex, rem numquam dignissimos! Dicta expedita ipsa quidem pariatur magni, vel eum veritatis laudantium, impedit, at officiis temporibus! Similique, beatae minus?
+          Dolorem sequi explicabo dolore impedit eveniet, excepturi alias, iure itaque deleniti esse, quisquam autem repellendus officiis atque! Autem corporis magni molestias unde error, iusto voluptatem doloribus dolorum aperiam excepturi nihil?
+          Iure eligendi laborum sint provident temporibus quos quidem officiis accusantium repellendus! Incidunt repellendus eius harum illo alias cumque, eligendi nesciunt autem aliquam sunt? Ea incidunt aliquam quam aperiam odio ipsam.
+          Non amet quas, molestias accusantium laboriosam tempora consequatur neque magni, vel ipsa unde veritatis at quo quae impedit cumque sed ea quidem atque delectus ipsum. Enim quasi tempora modi temporibus!
+        </p>
+
       </div>
     </main>
 

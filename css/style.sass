@@ -1,13 +1,14 @@
 $font-color: #000
-$background: #FFF
-$darker-background: #c5c5c5
+$background: #F32827
+$darker-background: #F2E422
+$header-height: 3em
 
 * 
     margin: 0
     paddin: 0
+    position: relative
 
-body, html
-    overflow-x: hidden
+
 
 header, footer
     background-color: $darker-background
@@ -15,6 +16,10 @@ header, footer
     display: flex
     justify-content: space-between
     align-items: center
+
+header
+    height: $header-height
+    z-index: 100
 
 main
     background-color: $background
@@ -31,6 +36,26 @@ a:hover
 
 .clickable
     cursor: pointer
+
+.button
+    $button-color: white
+    $button-font: 1.5rem
+
+    padding: 0.5em 0.25em
+    border: 1px solid $button-color
+    border-radius: 0.25em
+    width: fit-content
+
+    color: $button-color
+    text-align: center
+    font-size: $button-font
+
+    background-color: rgba(150, 150, 150, 0)
+    transition: background-color 0.5
+
+.button:hover
+    background-color: rgba(150, 150, 150, 0.5)
+
 
 //smaller screens
 .header-links
@@ -56,7 +81,26 @@ a:hover
 .sidebar.active
     right: 0
 
+.home-container
+    position: relative
+    width: 100%
+    height: 500px
+    overflow: hidden
+    background-color: #000
 
+.home-container .button 
+    position: absolute
+    bottom: 5vh
+    right: 45vw
+    z-index: 50
+
+#canvas 
+    position: absolute
+    bottom: -250px
+    left: 0
+
+.works
+    padding: 2.5em 3em
 
 @media (min-width: 900px)
     .sidebar-container
