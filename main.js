@@ -24,7 +24,7 @@ scene.add(ambientLight);
 //MEU MODELO
 const loader = new GLTFLoader();
 
-loader.load( './assets/models/Hamburger.glb', function ( gltf ) {
+loader.load( '/assets/models/Hamburger.glb', function ( gltf ) {
 	scene.add( gltf.scene );
 }, undefined, function ( error ) {
 	console.error( error );
