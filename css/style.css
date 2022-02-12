@@ -70,8 +70,8 @@ a:hover {
 }
 
 .sidebar {
-  position: absolute;
-  right: -50vh;
+  position: fixed;
+  right: -110vw;
   top: 0;
   -webkit-transition: right 0.5s;
   transition: right 0.5s;
@@ -91,11 +91,12 @@ a:hover {
       -ms-flex-align: center;
           align-items: center;
   height: 100vh;
-  padding: 0em 5em 50em 10em;
+  width: 35vw;
+  padding: 1em 1em 10em 1em;
 }
 
 .sidebar.active {
-  right: 0;
+  right: -5vw;
 }
 
 .home-container {
@@ -115,12 +116,16 @@ a:hover {
 
 #canvas {
   position: absolute;
-  bottom: -250px;
+  bottom: -300px;
   left: 0;
 }
 
 .works {
   padding: 2.5em 3em;
+}
+
+footer .social-media a:hover {
+  text-decoration: none;
 }
 
 @media (min-width: 900px) {
