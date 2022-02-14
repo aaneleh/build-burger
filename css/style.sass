@@ -120,13 +120,19 @@ footer .social-media a:hover
 .builder-main
     padding: 1.5em 2em
 
-.burger-container
+.builder-container //the one with the canvas inside
+    position: relative
+    width: 95vw
+    height: 50vh
+    overflow: hidden
     border: 1px solid black
-    background-color: white
     border-radius: 10px
-    text-align: center
-    padding: 1.5em
     margin-bottom: 1em
+
+    canvas
+        position: absolute
+        bottom: -3.5em
+
 
 .buttons-container
     margin-left: 5em

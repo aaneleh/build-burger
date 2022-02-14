@@ -9,21 +9,21 @@
 </head>
 <body>
     
+    <!-----------------  MODALS  -------------------------->
     <section id="thanks-modal" class="modal">
         <div class="modal-container">
-            <svg class="clickable" onclick="toggleTModal()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="35px" width="35px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+            <svg class="clickable" id="close-thanks" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="35px" width="35px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
             <h2>Thanks for ordering!</h2>
             <p>Your total is <span id="price">$$$</span></p>
             <a href="/build" class="button">Go to check-out</a>
         </div>
     </section>
-
     <section id="error-modal" class="modal">
         <div class="modal-container">
-            <svg class="clickable" onclick="toggleEModal()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="35px" width="35px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+            <svg class="clickable" id="close-error" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="35px" width="35px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
             <h2>Error!</h2>
             <p>Your burger needs more ingredients</p>
-            <span onclick="toggleEModal()" class="button clickable">Go back</span>
+            <span id="back-error" class="button clickable">Go back</span>
         </div>
     </section>
 
@@ -63,22 +63,25 @@
 
     <!-----------------  MAIN  -------------------------->
     <main class="builder-main">
-        <div class="burger-container" id="burger-container">
-            <!-- Como default já vai ter pão de cima e baixo -->
+        <div class="builder-container">
+            <canvas id="builder-canvas">
+                
+            </canvas>
         </div>
         <div class="buttons-container">
-            <button class="button" onclick="build('burger')">Burger</button>
-            <button class="button" onclick="build('cheese')">Cheese</button>
-            <button class="button" onclick="build('lettuce')">Lettuce</button>
-            <button class="button" onclick="build('tomatos')">Tomatos</button>
+            <button class="button" id="burger-button">Burger</button>
+            <button class="button" id="cheese-button">Cheese</button>
+            <button class="button" id="lettuce-button">Lettuce</button>
+            <button class="button" id="tomatos-button">Tomatos</button>
         </div>
         <div class="restart-container">
-            <button class="big button" onclick="restart()">Restart</button>
+            <button id="restart" class="big button">Restart</button>
         </div>
         <div class="order-container">
-            <button class="big button" onclick="order()">Order</button>
+            <button id="order" class="big button" >Order</button>
         </div>
-        <!-- Botão de validação/finalizar pedido-->
+        
+        
     </main>
 
     <!-----------------  FOOTER  -------------------------->
@@ -113,10 +116,8 @@
         </div>
     </footer>
 
-
-
     <script type="module" src="/index.js"></script> <!-- imports css-->
+    <script type="module" src="/js/builder.js"></script> <!-- makes builder work -->
     <script src="/js/sidebar.js"></script> <!-- makes sidebar work -->
-    <script src="/js/builder.js"></script> <!-- makes builder work -->
 </body>
 </html>
