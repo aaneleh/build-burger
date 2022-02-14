@@ -29,13 +29,18 @@ var ingredients = [];
 const loader = new GLTFLoader();
 loader.load( '/assets/models/Bread_Top.glb', function (gltf) {
 	ingredients[0] = gltf.scene;
-    ingredients[0].position.y = -1;
+    ingredients[0].position.y = -0.5;
+    scene.add(gltf.scene);
+});
+loader.load( '/assets/models/Bread_Bottom.glb', function (gltf) {
+	ingredients[1] = gltf.scene;
+    ingredients[1].position.y = -1.5;
     scene.add(gltf.scene);
 });
 
 //ORBIT CONTROL
 const controls = new OrbitControls(camera, renderer.domElement);
-controls.enablePan = true;//set to false later
+controls.enablePan = false;
 
 //ANIMATION LOOP
 function animate(){
@@ -45,14 +50,24 @@ function animate(){
 }
 animate();
 
-
-
-//const container = document.getElementById('burger-container');
-var bread_bottom;
 function updateBurger(){
-    for (var i = 0; i < ingredients.length; i++){
-        ingredients[i].position.y = -i * 0.25 - 1;
+    //i=2 para ignorar os dois pães
+    for (var i = 2; i <= ingredients.length; i++){
+        //if is the last loop, move the bread
+        if (i == ingredients.length){
+            ingredients[1].position.y = -i * 0.25 - 0.5;
+
+        //moving all the others ingredients
+        } else {
+            ingredients[i].position.y = -i * 0.25 - 0.5;
+        }
+
     }
+    //if there are to many ingredients move the camera also
+    if(ingredients.length >= 6){
+        camera.position.z += 1;
+    }
+
 }
 
 //ADD INGREDIENTS TO ARRAY
@@ -87,10 +102,15 @@ document.getElementById('tomatos-button').addEventListener('click', function(){
 
 //RESTART
 document.getElementById('restart').addEventListener('click', function(){
-    burger = ['bread_top'];
-    updateBurger();
-})
+    for (var i = 2; i <= ingredients.length; i++){
+        scene.remove(ingredients[i]); 
+    }
+    ingredients.splice(2,ingredients.length-2);
+    
+    ingredients[0].position.y = -0.5;
+    ingredients[1].position.y = -1.5;
 
+})
 
 // ******** ORDER ********
 //POP UPS
@@ -98,7 +118,7 @@ const errorModal = document.getElementById('error-modal');
 const thanksModal = document.getElementById('thanks-modal');
 //OPEN POP UPS
 document.getElementById('order').addEventListener('click', function(){
-    ingredients.length > 1 ? thanksModal.classList.add('active') : errorModal.classList.add('active');
+    ingredients.length > 2 ? thanksModal.classList.add('active') : errorModal.classList.add('active');
 });
 //CLOSE POP UPS
 document.getElementById('close-thanks').addEventListener('click',function(){
