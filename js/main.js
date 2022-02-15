@@ -15,6 +15,7 @@ camera.position.set(0,2,5);
 //LIGHT
 const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(ambientLight);
+scene.background = new THREE.Color(0xFFFFFF);
 
 //MEU MODELO
 var model;
@@ -40,3 +41,10 @@ function animate(){
     renderer.render(scene, camera);
 }
 animate();
+
+//SIDEBAR
+const sidebar_buttons = document.getElementsByClassName('toggleSidebar');
+for(var i = 0; i < sidebar_buttons.length; i++){
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('active');
+}

@@ -127,3 +127,10 @@ document.getElementById('back-error').addEventListener('click',function(){
     errorModal.classList.remove('active');
 })
 //look, i prefered the onClick function on html, but the module dont let me do that, so patience
+
+//SIDEBAR
+const sidebar_buttons = document.getElementsByClassName('toggleSidebar');
+for(var i = 0; i < sidebar_buttons.length; i++){
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('active');
+}
