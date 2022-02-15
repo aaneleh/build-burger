@@ -1,3 +1,4 @@
+import '/css/style.css'
 import * as THREE from 'three';
 import { OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
@@ -131,6 +132,8 @@ document.getElementById('back-error').addEventListener('click',function(){
 //SIDEBAR
 const sidebar_buttons = document.getElementsByClassName('toggleSidebar');
 for(var i = 0; i < sidebar_buttons.length; i++){
-    const sidebar = document.getElementById('sidebar');
-    sidebar.classList.toggle('active');
+    sidebar_buttons[i].addEventListener('click', function() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('active');
+    });
 }
