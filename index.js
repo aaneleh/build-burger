@@ -1,9 +1,10 @@
 console.log('openned main page js');
 
 import './css/style.css';
-import * as THREE from 'three';
+/* import * as THREE from 'three';
 import { OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+ */
 
 //SIDEBAR
 const sidebar_buttons = document.getElementsByClassName('toggleSidebar');
