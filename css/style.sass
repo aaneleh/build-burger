@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap')
+
+$font-color: #000
+$background: #ffffff 
+$darker-background: #fffea6 
+$header-height: 3em
+
+* 
+    margin: 0
+    padding: 0
+    position: relative
+    font-family: 'Montserrat', sans-serif
+
+header, footer
+    background-color: $darker-background
+    padding: 1em 2.5em
+    display: flex
+    justify-content: space-between
+    align-items: center
+    box-shadow: 0px 0px 5px 2.5px #d3d168be
+
+header
+    height: $header-height
+    z-index: 75
+
+main
+    background-color: $background
+
+ul 
+    list-style-type: none
+
+a
+    color: $font-color
+    text-decoration: none
+    font-style: italic
+a:hover
+    text-decoration: underline
+
+.clickable
+    cursor: pointer
+
+.button
+    $button-color: black
+    $button-font: 1.25rem
+
+    padding: 0.5em 0.25em
+    border: 1px solid $button-color
+    border-radius: 0.25em
+    width: fit-content
+
+    color: $button-color
+    text-align: center
+    font-size: $button-font
+
+    background-color: $darker-background
+    transition: background-color 0.15s
+
+.button:hover
+    background-color: $darker-background
+    text-decoration: none
+    cursor: pointer
+
+.logo-container a
+    font-style: normal
+    text-decoration: none
+
+//smaller screens
+.header-links
+    visibility: hidden
+    position: absolute
+
+.sidebar
+    position: fixed
+    right: -110vw
+    top: 0
+    transition: right 0.5s
+
+    background: $darker-background
+    border-left: 1px solid $font-color
+
+    display: flex
+    flex-direction: column
+    justify-content: space-evenly
+    align-items: center
+    height: 100vh
+    width: 35vw
+
+    padding: 1em 1em 10em 1em
+
+.sidebar.active
+    right: -5vw
+
+.home-container
+    position: relative
+    width: 100%
+    height: 500px
+    overflow: hidden
+    background-color: #000
+
+.home-container .button 
+    position: absolute
+    bottom: 5vh
+    right: 45vw
+    z-index: 50
+
+#canvas 
+    position: absolute
+    bottom: -300px
+    left: 0
+
+.works
+    padding: 2.5em 3em
+    background-color: $darker-background
+
+footer .social-media a:hover
+    text-decoration: none
+
+
+//BUILDER PAGE
+.builder-main
+    padding: 1.5em 2em
+
+.builder-container //the one with the canvas inside
+    position: relative
+    width: 95vw
+    height: 50vh
+    overflow: hidden
+    border: 1px solid black
+    border-radius: 10px
+    margin-bottom: 1em
+
+    canvas
+        position: absolute
+        bottom: -3.5em
+
+
+.buttons-container
+    margin-left: 5em
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(10em, 1fr))
+    column-gap: 1em
+    row-gap: 1em
+
+.restart-container, .order-container
+    display: flex
+    justify-content: space-around
+    button
+        width: 50vw
+        margin-top: 1em
+
+//MEDIA QUERIES
+@media (min-width: 900px)
+    .sidebar-container
+        visibility: hidden
+        position: absolute
+    .header-links
+        visibility: visible
+        position: relative
+
+@media (max-width: 900px)
+    footer
+        flex-direction: column
+        div
+            margin-bottom: 1em
+        .links-footer
+            text-align: center
+
+//POP UP
+.modal
+    z-index: 90
+
+    position: absolute
+    width: 100vw
+    height: 100vh
+    
+    display: flex
+    justify-content: center
+    align-items: center
+
+    visibility: hidden
+    backdrop-filter: blur(3px)
+    transition: backdrop-filter 0.3s
+
+.modal.active
+    visibility: visible
+
+.modal-container
+    z-index: 100
+    
+    border: 0.01em solid black
+    border-radius: 10px
+    background-color: $darker-background
+    box-shadow: inset 0px 0px 5px 2.5px #c0bf6bbe
+
+    padding: 1em
+    height: 15em
+
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-evenly
