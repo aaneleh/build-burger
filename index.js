@@ -1,4 +1,4 @@
-import './style.css';
+import '/style.css';
 
 //SIDEBAR
 const sidebar_buttons = document.getElementsByClassName('toggleSidebar');
