@@ -1,3 +1,3 @@
-import './css/style.css';
+import './style.css';
 
 console.log('openned main page js');
