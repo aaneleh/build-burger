@@ -32,17 +32,15 @@ scene.background = new THREE.Color(0xFFFFFF);
 //MEU MODELO
 var model;
 const loader = new GLTFLoader();
-
 loader.load( './assets/models/Home.glb', function (gltf) {
     model = gltf.scene;
+    model.position.y = 0.35;
     scene.add(gltf.scene);
 });
 
 //ORBIT CONTROL
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enablePan = false;
-
-
 
 //RENDER
 const builder_renderer = new THREE.WebGLRenderer({
@@ -78,7 +76,7 @@ loader.load( '/assets/models/Bread_Bottom.glb', function (gltf) {
 });
 
 //ORBIT CONTROL
-const builder_controls = new OrbitControls(camera, builder_renderer.domElement);
+const builder_controls = new OrbitControls(builder_camera, builder_renderer.domElement);
 builder_controls.enablePan = false;
 
 
@@ -97,7 +95,7 @@ function updateBurger(){
     }
     //if there are to many ingredients move the camera also
     if(ingredients.length >= 6){
-        camera.position.z += 1;
+        builder_camera.position.z += 1;
     }
 }
 
@@ -166,6 +164,7 @@ document.getElementById('back-error').addEventListener('click',function(){
 function animate(){
     requestAnimationFrame(animate);
     controls.update();
+    model.rotation.y += 0.005;
     renderer.render(scene, camera);
 
     builder_controls.update();

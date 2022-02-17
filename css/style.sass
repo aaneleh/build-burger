@@ -19,6 +19,7 @@ header, footer
     align-items: center
     box-shadow: 0px 0px 5px 2.5px #d3d168be
 
+
 header
     height: $header-height
     z-index: 75
@@ -96,12 +97,11 @@ a:hover
     height: 500px
     overflow: hidden
     background-color: #000
-
-.home-container .button 
-    position: absolute
-    bottom: 5vh
-    right: 45vw
-    z-index: 50
+    .button 
+        position: absolute
+        bottom: 5vh
+        right: 45vw
+        z-index: 50
 
 #canvas 
     position: absolute
@@ -111,6 +111,24 @@ a:hover
 .works
     padding: 2.5em 3em
     background-color: $darker-background
+    box-shadow: 0px 0px 5px 2.5px #d3d168be
+
+    .works-container
+        padding: 2.5em 3em
+        display: flex
+        align-items: center
+        flex-direction: column
+
+        .works-video
+            width: 90%
+            height: auto
+            aspect-ratio: 16/9
+
+        .works-text
+            font-size: 1.25em
+            text-align: center
+            p
+                margin-top: 0.75em
 
 footer .social-media a:hover
     text-decoration: none
@@ -135,11 +153,12 @@ footer .social-media a:hover
 
 
 .buttons-container
-    margin-left: 5em
     display: grid
     grid-template-columns: repeat(auto-fit, minmax(10em, 1fr))
-    column-gap: 1em
     row-gap: 1em
+    
+    justify-items: center
+
 
 .restart-container, .order-container
     display: flex
@@ -147,23 +166,6 @@ footer .social-media a:hover
     button
         width: 50vw
         margin-top: 1em
-
-//MEDIA QUERIES
-@media (min-width: 900px)
-    .sidebar-container
-        visibility: hidden
-        position: absolute
-    .header-links
-        visibility: visible
-        position: relative
-
-@media (max-width: 900px)
-    footer
-        flex-direction: column
-        div
-            margin-bottom: 1em
-        .links-footer
-            text-align: center
 
 //POP UP
 .modal
@@ -201,3 +203,42 @@ footer .social-media a:hover
     flex-direction: column
     align-items: center
     justify-content: space-evenly
+
+.builder-main
+    display: block
+    background-color: white
+
+
+//MEDIA QUERIES
+@media (min-width: 900px)
+    .sidebar-container
+        visibility: hidden
+        position: absolute
+    .header-links
+        visibility: visible
+        position: relative
+
+@media (max-width: 900px)
+    footer
+        flex-direction: column
+        div
+            margin-bottom: 1em
+        .links-footer
+            text-align: center
+
+@media (min-width: 1300px)
+    /*BUILDER ON BIGGER SCREENS*/
+    .builder-main
+        display: flex
+        .buttons-container
+            display: flex
+            flex-direction: column
+            justify-content: space-around
+            margin-bottom: 5em
+            button
+                width: 50vw
+                margin-top: 0.5em
+        .builder-options
+            margin-left: 1em
+        .builder-container canvas
+            right: -24em

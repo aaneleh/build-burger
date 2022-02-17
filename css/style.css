@@ -134,6 +134,37 @@ a:hover {
 .works {
   padding: 2.5em 3em;
   background-color: #fffea6;
+  -webkit-box-shadow: 0px 0px 5px 2.5px #d3d168be;
+          box-shadow: 0px 0px 5px 2.5px #d3d168be;
+}
+
+.works .works-container {
+  padding: 2.5em 3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.works .works-container .works-video {
+  width: 90%;
+  height: auto;
+  aspect-ratio: 16/9;
+}
+
+.works .works-container .works-text {
+  font-size: 1.25em;
+  text-align: center;
+}
+
+.works .works-container .works-text p {
+  margin-top: 0.75em;
 }
 
 footer .social-media a:hover {
@@ -160,14 +191,12 @@ footer .social-media a:hover {
 }
 
 .buttons-container {
-  margin-left: 5em;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(10em, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
-  -webkit-column-gap: 1em;
-          column-gap: 1em;
   row-gap: 1em;
+  justify-items: center;
 }
 
 .restart-container, .order-container {
@@ -181,32 +210,6 @@ footer .social-media a:hover {
 .restart-container button, .order-container button {
   width: 50vw;
   margin-top: 1em;
-}
-
-@media (min-width: 900px) {
-  .sidebar-container {
-    visibility: hidden;
-    position: absolute;
-  }
-  .header-links {
-    visibility: visible;
-    position: relative;
-  }
-}
-
-@media (max-width: 900px) {
-  footer {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  footer div {
-    margin-bottom: 1em;
-  }
-  footer .links-footer {
-    text-align: center;
-  }
 }
 
 .modal {
@@ -260,5 +263,67 @@ footer .social-media a:hover {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+}
+
+.builder-main {
+  display: block;
+  background-color: white;
+}
+
+@media (min-width: 900px) {
+  .sidebar-container {
+    visibility: hidden;
+    position: absolute;
+  }
+  .header-links {
+    visibility: visible;
+    position: relative;
+  }
+}
+
+@media (max-width: 900px) {
+  footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  footer div {
+    margin-bottom: 1em;
+  }
+  footer .links-footer {
+    text-align: center;
+  }
+}
+
+@media (min-width: 1300px) {
+  /*BUILDER ON BIGGER SCREENS*/
+  .builder-main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .builder-main .buttons-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin-bottom: 5em;
+  }
+  .builder-main .buttons-container button {
+    width: 50vw;
+    margin-top: 0.5em;
+  }
+  .builder-main .builder-options {
+    margin-left: 1em;
+  }
+  .builder-main .builder-container canvas {
+    right: -24em;
+  }
 }
 /*# sourceMappingURL=style.css.map */
