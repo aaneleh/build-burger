@@ -14,9 +14,13 @@ for(var i = 0; i < sidebar_buttons.length; i++){
 
 //STARTING SETUP
 const scene = new THREE.Scene();
+
+//RENDERER
 const renderer = new THREE.WebGLRenderer({
     canvas: document.getElementById('canvas'),
 })
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setSize(window.innerWidth, window.innerHeight);
 
 //CAMERA
 const camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 1, 100)
@@ -30,18 +34,10 @@ scene.background = new THREE.Color(0xFFFFFF);
 //MEU MODELO
 var model;
 const loader = new GLTFLoader();
-loader.load( '/assets/models/Home.glb', function (gltf) {
-	model = gltf.scene;
-    scene.add(gltf.scene);
-});
 
 //ORBIT CONTROL
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enablePan = false;
-
-//RENDERER
-renderer.setPixelRatio(window.devicePixelRatio);
-renderer.setSize(window.innerWidth, window.innerHeight);
 
 //ANIMATION LOOP
 function animate(){
@@ -50,4 +46,19 @@ function animate(){
     controls.update();
     renderer.render(scene, camera);
 }
-animate();
+
+window.onload = function() {
+    loader.load( '/assets/models/Home.glb', async function (gltf) {
+        model = await gltf.scene;
+        scene.add(gltf.scene);
+    });
+
+    animate();
+};
+
+
+
+
+
+
+
