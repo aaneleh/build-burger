@@ -39,7 +39,7 @@ const loader = new GLTFLoader();
 //'/assets/models/Home.glb'
 
 loader.load( 'https://github.com/aaneleh/build-burger/blob/main/assets/models/Home.glb', function (gltf) {
-    model = await gltf.scene;
+    model = ngltf.scene;
     scene.add(gltf.scene);
 });
 
