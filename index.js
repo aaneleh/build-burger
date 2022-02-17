@@ -1,7 +1,7 @@
 import './css/style.css';
-import * as THREE from 'three';
-import { OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+/* import * as THREE from 'three'; */
+import { OrbitControls} from './OrbitControls';
+import { GLTFLoader } from './GLTFLoader.js';
 
 //SIDEBAR
 const sidebar_buttons = document.getElementsByClassName('toggleSidebar');
