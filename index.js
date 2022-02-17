@@ -35,6 +35,14 @@ scene.background = new THREE.Color(0xFFFFFF);
 var model;
 const loader = new GLTFLoader();
 
+//https://github.com/aaneleh/build-burger/blob/main/assets/models/Home.glb
+//'/assets/models/Home.glb'
+
+loader.load( 'https://github.com/aaneleh/build-burger/blob/main/assets/models/Home.glb', function (gltf) {
+    model = await gltf.scene;
+    scene.add(gltf.scene);
+});
+
 //ORBIT CONTROL
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enablePan = false;
@@ -47,18 +55,4 @@ function animate(){
     renderer.render(scene, camera);
 }
 
-window.onload = function() {
-    loader.load( '/assets/models/Home.glb', async function (gltf) {
-        model = await gltf.scene;
-        scene.add(gltf.scene);
-    });
-
-    animate();
-};
-
-
-
-
-
-
-
+animate();
