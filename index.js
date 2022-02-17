@@ -1,6 +1,4 @@
-import './css/style.css';
-
-import {OrbitControls} from './OrbitControls';
+import {OrbitControls} from './OrbitControls.js';
 import {GLTFLoader} from './GLTFLoader.js';
 
 //SIDEBAR
