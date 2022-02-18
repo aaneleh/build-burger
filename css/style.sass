@@ -1,9 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap')
 
+$red: #F23827
+$red-shadow: #c42f22
+$yellow: #f8e21d
+$orange: #f2c230
+
 $font-color: #000
-$background: #ffffff 
-$darker-background: #fffea6 
 $header-height: 3em
+
+$background-color: $red
+$background-darker: $red-shadow
+
+$main-color: $yellow
+$main-darker: $orange
+$section-color: $orange
+
+//BUTTONS
+$button-text: $font-color
+$button-font: 1.25rem
+$button-color: $main-color
 
 * 
     margin: 0
@@ -12,23 +27,27 @@ $header-height: 3em
     font-family: 'Montserrat', sans-serif
 
 header, footer
-    background-color: $darker-background
+    background-color: $main-color
     padding: 1em 2.5em
     display: flex
     justify-content: space-between
     align-items: center
-    box-shadow: 0px 0px 5px 2.5px #d3d168be
-
+    box-shadow: 0px 0px 5px 2.5px $main-darker
 
 header
     height: $header-height
     z-index: 75
 
 main
-    background-color: $background
+    background-color: $background-color
 
 ul 
     list-style-type: none
+
+.title
+    background: -webkit-linear-gradient($main-color, $main-darker)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
 
 a
     color: $font-color
@@ -41,23 +60,22 @@ a:hover
     cursor: pointer
 
 .button
-    $button-color: black
+    $button-text: black
     $button-font: 1.25rem
 
     padding: 0.5em 0.25em
-    border: 1px solid $button-color
+    border: 1px solid $button-text
     border-radius: 0.25em
     width: fit-content
 
-    color: $button-color
+    color: $button-text
     text-align: center
     font-size: $button-font
 
-    background-color: $darker-background
+    background-color: $button-color
     transition: background-color 0.15s
 
 .button:hover
-    background-color: $darker-background
     text-decoration: none
     cursor: pointer
 
@@ -76,7 +94,7 @@ a:hover
     top: 0
     transition: right 0.5s
 
-    background: $darker-background
+    background: $main-color
     border-left: 1px solid $font-color
 
     display: flex
@@ -110,10 +128,15 @@ a:hover
 
 .works
     padding: 2.5em 3em
-    background-color: $darker-background
-    box-shadow: 0px 0px 5px 2.5px #d3d168be
+    background-color: $background-color
+    box-shadow: 0px 0px 5px 2.5px $background-darker
+
+    .title
+        margin: 0 0 1em 0
 
     .works-container
+        background-color: $main-color
+        border-radius: 1em
         padding: 2.5em 3em
         display: flex
         align-items: center
@@ -135,8 +158,15 @@ footer .social-media a:hover
 
 
 //BUILDER PAGE
+.builder-section
+    padding-top: 1em
+    background-color: $background-color
+    box-shadow: 0px 0px 7px 5px $background-darker
+
 .builder-main
-    padding: 1.5em 2em
+    background-color: $background-color
+    display: block
+    padding: 1.5em
 
 .builder-container //the one with the canvas inside
     position: relative
@@ -193,7 +223,7 @@ footer .social-media a:hover
     
     border: 0.01em solid black
     border-radius: 10px
-    background-color: $darker-background
+    background-color: $main-color
     box-shadow: inset 0px 0px 5px 2.5px #c0bf6bbe
 
     padding: 1em
@@ -203,11 +233,6 @@ footer .social-media a:hover
     flex-direction: column
     align-items: center
     justify-content: space-evenly
-
-.builder-main
-    display: block
-    background-color: white
-
 
 //MEDIA QUERIES
 @media (min-width: 900px)
